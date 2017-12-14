@@ -2486,12 +2486,13 @@ body {
         position: absolute;
         top: 50%;
         left: 50%; } }
-    .day-list .icon-wrapper i {
+    .day-list .icon-wrapper .fa {
       color: #fff;
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%); }
+      transform: translate(-50%, -50%);
+      font-size: 18px; }
     .day-list .icon-wrapper--before {
       /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6cc7ee+11,40789d+100 */
       background: #6cc7ee;
@@ -2507,7 +2508,7 @@ body {
       -webkit-box-shadow: inset 0px 1px 0px 0px white;
       -moz-box-shadow: inset 0px 1px 0px 0px white;
       box-shadow: inset 0px 1px 0px 0px white; }
-      .day-list .icon-wrapper--before i {
+      .day-list .icon-wrapper--before .fa {
         color: #122244; }
 
 .tooltip {
@@ -2549,7 +2550,8 @@ body {
     @media screen and (min-width: 768px) {
       .tooltip__date {
         height: 22px;
-        line-height: 22px; } }
+        line-height: 22px;
+        font-size: 10px; } }
   .tooltip__name {
     font-size: 10px;
     color: #122244;

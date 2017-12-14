@@ -177,12 +177,13 @@ body{
       top: 50%;
       left: 50%;
     }
-    i {
+    .fa{
       color: #fff;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      font-size: 18px;
     }
     &--before {
       /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6cc7ee+11,40789d+100 */
@@ -195,7 +196,7 @@ body{
       -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 1);
       -moz-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 1);
       box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 1);
-      i {
+      .fa {
         color: #122244;
       }
     }
@@ -246,6 +247,7 @@ body{
     @media screen and (min-width: 768px) {
       height: 22px;
       line-height: 22px;
+      font-size: 10px;
     }
   }
   &__name {
