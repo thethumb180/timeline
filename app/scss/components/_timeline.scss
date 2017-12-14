@@ -1,0 +1,263 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+*{
+  box-sizing: border-box;
+}
+
+.container {
+  @media screen and (min-width: 768px) {
+    max-width: 1008px;
+    padding: 150px 10px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  @media screen and (max-width: 767px){
+    width: 100%;
+    padding: 32px 17px;
+  }
+}
+.timeline {
+  &__wrapper {
+    @media screen and (min-width: 768px){
+      background: url("../images/timeline-bg.png") no-repeat;
+      background-size: contain;
+      height:88px;
+      position: relative;
+    }
+  }
+  &__line {
+    width: 100%;
+    height: 19px;
+    background-color: #122244;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    top:46px;
+    @media screen and (max-width: 767px){
+      display: none;
+    }
+  }
+  &__progress-bar {
+    height: 38px;
+    //background: url("../images/progress-bar-bg.png") repeat-x 0 center;
+    margin:0 4px;
+    display: inline-block;
+    border-radius: 3px;
+    position: absolute;
+    top:36px;
+    left: 0;
+    overflow: hidden;
+    @media screen and (max-width: 767px){
+      display: none;
+    }
+    &::after {
+      position: absolute;
+      content: '';
+      right: 47px;
+      top: -2px;
+      height: 38px;
+      width: 182px;
+      background: url("../images/timeline-light.png") no-repeat center center;
+    }
+    &::before {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 14px;
+      height: 11px;
+      width: 100%;
+      background: url("../images/progress-bar-bg.png") repeat-x 0 center;
+      border-radius: 8px;
+    }
+    &.remove-after {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+.day-list {
+  width: 100%;
+  margin:  0;
+  padding: 0;
+  @media screen and (min-width: 768px) {
+    height: 38px;
+    position: absolute;
+    left: 0;
+    top: 35px;
+  }
+  &__item {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    @media screen and (min-width: 768px) {
+      height: 38px;
+    }
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      display: none;
+      min-height: 38px;
+      padding-left: 50px;
+      margin-bottom: 14px;
+      padding-top: 5px;
+    }
+    &--selected {
+      display: inline-block;
+      position: relative;
+      z-index: 10;
+      &:after {
+        content: '';
+        background-color: #122244;
+        width: 38px;
+        height: 38px;
+        display: inline-block;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        @media screen and (min-width: 768px) {
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+    &:hover {
+      .tooltip {
+        display: inline-block;
+      }
+      .icon-wrapper {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#73d2ab+11,56b08b+100 */
+        background: #73d2ab; /* Old browsers */
+        background: -moz-linear-gradient(top, #73d2ab 11%, #56b08b 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, #73d2ab 11%, #56b08b 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, #73d2ab 11%, #56b08b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#73d2ab', endColorstr='#56b08b', GradientType=0); /* IE6-9 */
+        cursor: pointer;
+
+        -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 1);
+        -moz-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 1);
+        box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 1);
+      }
+    }
+    &:first-child {
+      .tooltip {
+        left: 0;
+        transform: translate(0, 0);
+        &:after, &:before {
+          left: 10px;
+        }
+      }
+    }
+    &:last-child {
+      .tooltip {
+        left: auto;
+        right: 0;
+        transform: translate(0, 0);
+        &:after, &:before {
+          left: 85%;
+        }
+      }
+    }
+  }
+  .icon-wrapper {
+    width: 29px;
+    height: 29px;
+    display: inline-block;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 20;
+    position: absolute;
+    top: 19px;
+    left: 19px;
+    @media screen and (min-width: 768px) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+    i {
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &--before {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6cc7ee+11,40789d+100 */
+      background: #6cc7ee; /* Old browsers */
+      background: -moz-linear-gradient(top, #6cc7ee 11%, #40789d 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, #6cc7ee 11%, #40789d 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, #6cc7ee 11%, #40789d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6cc7ee', endColorstr='#40789d', GradientType=0); /* IE6-9 */
+
+      -webkit-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 1);
+      -moz-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 1);
+      box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 1);
+      i {
+        color: #122244;
+      }
+    }
+  }
+}
+
+.tooltip {
+  background-color: #fff;
+  @media screen and (min-width: 768px) {
+    width: 83px;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: none;
+    border: 1px solid #73d2ab;
+    text-align: center;
+  }
+  &:after, &:before {
+    @media screen and (min-width: 768px) {
+      top: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+    }
+  }
+
+  &:after {
+    border-top-color: #fff;
+    border-width: 6px;
+    margin-left: -6px;
+  }
+  &:before {
+    border-top-color: #73d2ab;
+    border-width: 7px;
+    margin-left: -7px;
+  }
+  &__date {
+    line-height: 14px;
+    font-size: 14px;
+    color: #122244;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    display: inline-block;
+    @media screen and (min-width: 768px) {
+      height: 22px;
+      line-height: 22px;
+    }
+  }
+  &__name {
+    font-size: 10px;
+    color: #122244;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    text-transform: uppercase;
+    padding: 0;
+    @media screen and (min-width: 768px) {
+      border-top: 1px solid #73d2ab;
+      padding: 10px 5px;
+    }
+  }
+}

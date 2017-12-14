@@ -1,0 +1,22 @@
+{
+  "name": "timeline",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "gulp copy-assets"
+  },
+  "keywords": [],
+  "author": "K.Kciuk",
+  "license": "ISC",
+  "dependencies": {
+    "font-awesome": "^4.7.0"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-watch": "^4.3.11"
+  }
+}
